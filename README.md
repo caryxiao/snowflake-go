@@ -11,3 +11,19 @@
 > - 10位的机器标识，10位的长度最多支持部署1024个节点。
 > - 12位的计数序列号，序列号即一系列的自增id，可以支持同一节点同一毫秒生成多个ID序号，12位的计数序列号支持每个节点每毫秒产生4096个ID序号。
 
+
+
+### 使用方法
+
+```go
+import "github.com/caryxiao/snowflake-go"
+
+func main() {
+  sn, err := snowflake_go.New(1)
+  if err != nil {
+    fmt.Println(err)
+  }
+  sn.GetId()
+}
+```
+
