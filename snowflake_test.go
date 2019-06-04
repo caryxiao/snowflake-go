@@ -13,7 +13,7 @@ func TestSnowflake_GetId(t *testing.T) {
 	}
 
 	idCh := make(chan int64)
-
+	defer close(idCh)
 	for i := 0; i < 10000; i++ {
 		go func(sf *Snowflake) {
 			nid := sf.GetId()
